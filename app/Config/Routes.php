@@ -31,9 +31,11 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->get('user', 'UserController::index');
+$routes->get('listusers', 'UserController::index');
 $routes->post('newuser', 'UserController::create');
 $routes->get('listuser/(:num)', 'UserController::show/$1');
+$routes->put('updateuser/(:num)', 'UserController::update/$1');
+$routes->delete('removeuser/(:num)', 'UserController::delete/$1');
 
 /*
  * --------------------------------------------------------------------
